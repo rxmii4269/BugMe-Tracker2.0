@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BugMe Issue Tracker New User</title>
+	
+	<link rel="stylesheet" type="text/css" href="bugme.css">
+	<script type="text/javascript" src="bugme_newissue.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<header>
+		<img class="logo"src="logo.png" >
+		<h1 class="label">BugMe Issue Tracker </h1>
+	</header>
+	<div class="rightsidemenu">
+	<a class= "menuoptions"href="home.html"><img src="home.png" class="icons"> Home</a>		
+		<a class= "menuoptions" href="new_user.html"><img src="adduser.png" class="icons"> Add User</a>
+		<a class= "menuoptions" href="new_issue.html"><img src="plus.png" class="icons"> New Issue</a>
+		<a class= "menuoptions" href=""><img src="logout.png" class="icons"> Logout</a>
+
+
+	</div>
+
+	<div class="center">
+		<h1 class="new_issue">Create Issue </h1>
+
+		<form id="create_issue" action="bugme.php">
+			<label class="input">Title</label>
+			<input class="input" type="text" name="title">
+			<label class="input">Decription</label>		
+			<textarea  class="input" name="description" form="create_issue"></textarea>
+			<label class="input" >Assigned To:</label>	
+			<input class="input" list="user" name="user">
+			<label class="input" >Type</label>	
+			<input class="input" list="type" name="error_type">
+			<label class="input" >Priority</label>	
+			<input class="input" list="priority" name="priority">
+			<button id="new_issuebtn" type="button">Submit </button>
+
+
+
+			<datalist id="user">
+				<option>g</option>
+			</datalist>
+			<datalist id="priority">
+				<option>Minor</option>
+				<option>Major</option>
+				<option>Critical</option>
+			</datalist>
+
+			<datalist id="type">
+				<option>Bug</option>
+				<option>Proposal</option>
+				<option>Task</option>
+			</datalist>
+
+
+			
+		</form>
+		
+		
+
+
+	</div>
+
+</body>
+</html>
