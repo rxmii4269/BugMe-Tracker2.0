@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BugMe Issue Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="bug_report_white_36x36.png" alt="photo of bug report" />
+        <h3>BugMe Issue Tracker</h3>
+    </header>
+
+    <div class="sidenav">
+        <a href="#">Home</a>
+        <a href="#">Add User</a>
+        <a href="#">New Issue</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <div class="main">
+        <div id="login">
+            <form action="" method="post">
+                <label for="firstname">Firstname</label>
+                <input type="text" name="firstname" id="fname" class="input" />
+
+                <label for="lastname">Lastname</label>
+                <input type="text" name="lastname" id="lname" class="input" />
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="pwd" class="input" />
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="input" />
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="results"></div>
+
+    </div>
+</body>
+
+</html>
