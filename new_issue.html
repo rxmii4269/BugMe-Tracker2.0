@@ -26,28 +26,23 @@
 	<div class="center">
 		<h1 class="new_issue">Create Issue </h1>
 
-		<form id="create_issue" action="bugme.php">
+		<form id="create_issue" action="database.php" method="post">
 			<label class="input">Title</label>
-			<input class="input" type="text" name="title">
+			<input id="title" class="input" type="text" name="title" value=''>
 			<label class="input">Decription</label>		
-			<textarea  class="input" name="description" form="create_issue"></textarea>
+			<textarea id="description" class="input" type="text"name="description" form="create_issue" value=''></textarea>
 			<label class="input" >Assigned To:</label>	
-			<input class="input" list="user" name="user">
+			<input id="user"class="input" list="user" name="user" value=''>
 			<label class="input" >Type</label>	
-			<input class="input" list="type" name="error_type">
+			<input id="error_type"class="input" list="type" name="error_type" value=''>
 			<label class="input" >Priority</label>	
-			<input class="input" list="priority" name="priority">
-			<button id="new_issuebtn" type="button">Submit </button>
+			<input id="priority"class="input" list="priority" name="priority" value=''>
+			<input id="new_issuebtn" type="button" name='i' value="Submit">
 
 
 
 			<datalist id="user">
 				<option>g</option>
-			</datalist>
-			<datalist id="priority">
-				<option>Minor</option>
-				<option>Major</option>
-				<option>Critical</option>
 			</datalist>
 
 			<datalist id="type">
@@ -56,6 +51,11 @@
 				<option>Task</option>
 			</datalist>
 
+			<datalist id="priority">
+				<option>Minor</option>
+				<option>Major</option>
+				<option>Critical</option>
+			</datalist>
 
 			
 		</form>
