@@ -10,23 +10,21 @@
 
 </head>
 <body>
-	<header>
+	<!-- <header>
 		<img class="logo"src="logo.png" >
 		<h1 class="label">BugMe Issue Tracker </h1>
 	</header>
 	<div class="rightsidemenu">
-	<a class= "menuoptions"href="home.html"><img src="home.png" class="icons"> Home</a>		
+	<a class= "menuoptions"href="index.html"><img src="home.png" class="icons"> Home</a>		
 		<a class= "menuoptions" href="new_user.html"><img src="adduser.png" class="icons"> Add User</a>
 		<a class= "menuoptions" href="new_issue.html"><img src="plus.png" class="icons"> New Issue</a>
-		<a class= "menuoptions" href=""><img src="logout.png" class="icons"> Logout</a>
+		<a class= "menuoptions" href=""><img src="logout.png" class="icons"> Logout</a> -->
 
 
-	</div>
-
-	<div class="center">
+	<div id="center" class="center">
 		<h1 class="new_issue">Create Issue </h1>
 
-		<form id="create_issue" action="database.php" method="post">
+		<form id="create_issue" action="" method="post">
 			<label class="input">Title</label>
 			<input id="title" class="input" type="text" name="title" value=''>
 			<label class="input">Decription</label>		
@@ -37,8 +35,7 @@
 			<input id="error_type"class="input" list="type" name="error_type" value=''>
 			<label class="input" >Priority</label>	
 			<input id="priority"class="input" list="priority" name="priority" value=''>
-			<input id="new_issuebtn" type="button" name='i' value="Submit">
-
+			
 
 
 			<datalist id="user">
@@ -57,7 +54,9 @@
 				<option>Critical</option>
 			</datalist>
 
-			
+			<br>
+
+			<input id="new_issuebtn" type="button" name='i' value="Submit">
 		</form>
 		
 		
