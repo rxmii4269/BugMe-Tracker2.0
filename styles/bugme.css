@@ -84,6 +84,7 @@ button.filter{
 	padding-left: 20px;
 	text-decoration: none;
 }
+
 input,input[type=text],input[type=password],textarea{
 	background-color: #D1D1D1;
 	display:block;
