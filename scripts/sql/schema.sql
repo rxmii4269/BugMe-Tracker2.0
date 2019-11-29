@@ -1,3 +1,4 @@
+USE bugMe_Tracker;
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users`
 (

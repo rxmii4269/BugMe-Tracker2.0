@@ -1,6 +1,7 @@
-"use strict";
+
 
 function Main() {
+
 	var errorcolor = "#E45449";
 	var newuser = document.querySelector('#newuserbtn');
 	var first = document.getElementById('firstname');
@@ -22,7 +23,8 @@ function Main() {
 			this.$.ajax({
 				type: "POST",
 				url: "database.php",
-				data: this.$('#user').serialize(),
+				data: {'firstname':firstname.value,'lastname':lastname.value,'password':password.value,
+		'Email':email.value,'Submitbtn':newuserbtn.value },
 				success: function (data) {
 					alert(data);
 				}
@@ -73,8 +75,10 @@ function Main() {
 
 
 
-	alert("loaded");
-}
 
+
+	alert("loaded");
+
+}
 
 document.addEventListener("DOMContentLoaded", Main);

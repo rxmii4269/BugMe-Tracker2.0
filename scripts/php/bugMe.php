@@ -1,8 +1,33 @@
 <?php
-//session_start();
+if (isset($_POST['Submitbtn'])){
+  new_issue();  
 
+}else{
+
+}
+
+
+
+
+
+
+
+function new_issue(){
+//include_once('database.php');
+$title=htmlspecialchars($_POST['title']);
+$description=htmlspecialchars($_POST['description']);
+$user=htmlspecialchars($_POST['user']);
+$error_type= htmlspecialchars($_POST['error_type']);
+$priority=htmlspecialchars($_POST['priority']);
+echo ($title." ".$description." ".$user." ".$error_type." ".$priority);
+
+
+}
+//----------------------------------------------------------------------------
+
+
+function login(){
 include_once('database.php');
-
 
 $email = filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL);
 $password = $_POST['password'];
@@ -32,3 +57,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") :
 else :
     echo "Method cannot be post";
 endif;
+
+}

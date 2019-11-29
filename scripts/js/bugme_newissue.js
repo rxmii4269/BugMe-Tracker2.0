@@ -1,4 +1,4 @@
-function Main(){
+window.onload = () => {
 var errorcolor="#E45449";
 var newissue=document.querySelector('#new_issuebtn');
 var title = document.getElementById('title');
@@ -56,7 +56,8 @@ alert(" remember to fix reg expression");
 
 	}
 	alert("loaded");
-}
+	
+};
 
 
-document.addEventListener("DOMContentLoaded",Main);
+//document.addEventListener("DOMContentLoaded",Main);

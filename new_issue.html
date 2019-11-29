@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+	
 	<title>BugMe Issue Tracker New User</title>
 	
-	<link rel="stylesheet" type="text/css" href="/styles/bugme.css">
-	<script type="text/javascript" src="/scripts/js/bugme_newissue.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/bugme.css">
+	<script type="text/javascript" src="scripts/js/bugme_newissue.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-</head>
+</head>-->
 <body>
-	<!-- <header>
-		<img class="logo"src="logo.png" >
-		<h1 class="label">BugMe Issue Tracker </h1>
-	</header>
-	<div class="rightsidemenu">
-	<a class= "menuoptions"href="index.html"><img src="home.png" class="icons"> Home</a>		
-		<a class= "menuoptions" href="new_user.html"><img src="adduser.png" class="icons"> Add User</a>
-		<a class= "menuoptions" href="new_issue.html"><img src="plus.png" class="icons"> New Issue</a>
-		<a class= "menuoptions" href=""><img src="logout.png" class="icons"> Logout</a> -->
-
-
-	<div id="center" class="center">
+	
+	<!--<div id="center" class="center">-->
 		<h1 class="new_issue">Create Issue </h1>
 
 		<form id="create_issue" action="" method="post">
@@ -30,16 +21,16 @@
 			<label class="input">Decription</label>		
 			<textarea id="description" class="input" type="text"name="description" form="create_issue" value=''></textarea>
 			<label class="input" >Assigned To:</label>	
-			<input id="user"class="input" list="user" name="user" value=''>
+			<input id="user"class="input" list="userlist" name="user" value=''>
 			<label class="input" >Type</label>	
 			<input id="error_type"class="input" list="type" name="error_type" value=''>
 			<label class="input" >Priority</label>	
-			<input id="priority"class="input" list="priority" name="priority" value=''>
+			<input id="priority"class="input" list="prioritylist" name="priority" value=''>
 			
 
 
-			<datalist id="user">
-				<option>g</option>
+			<datalist id="userlist">
+				<option>super user </option>
 			</datalist>
 
 			<datalist id="type">
@@ -48,7 +39,7 @@
 				<option>Task</option>
 			</datalist>
 
-			<datalist id="priority">
+			<datalist id="prioritylist">
 				<option>Minor</option>
 				<option>Major</option>
 				<option>Critical</option>
@@ -56,13 +47,13 @@
 
 			<br>
 
-			<input id="new_issuebtn" type="button" name='i' value="Submit">
+			<button id="new_issuebtn" type="button" name="Submitbtn" value="Submit">Submit</button>
 		</form>
 		
 		
 
 
-	</div>
+	<!--</div>-->
 
 </body>
 </html>
