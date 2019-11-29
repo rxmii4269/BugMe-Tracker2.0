@@ -4,7 +4,6 @@ window.onload =()=>{
     let email = document.getElementById("email");
     let password = document.getElementById("password");
     let submit = document.getElementById('submit');
-    let result = document.getElementById('result');
 
 
     let forms = document.querySelectorAll('form');
@@ -25,7 +24,9 @@ window.onload =()=>{
             url: "scripts/php/bugMe.php",
             data:{'email':email.value,'password':password.value},
             success:(data)=>{
-                result.innerHTML = data;
+                if( data === 'success'){
+              window.location.href = "dashboard.html";
+            }
             },
             dataType: "html"
 

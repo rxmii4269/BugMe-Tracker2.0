@@ -4,7 +4,7 @@
 	
 
 
-$host = '54.84.172.164';
+$host = 'localhost';
 $username = 'bugMe';
 $password = 'iNFO@2180';
 $dbname = 'bugMe_Tracker';

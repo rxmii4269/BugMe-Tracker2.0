@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="styles/login.css">
 </head>
 
-<body>
+<body >
 
 
+    <div id="result">
     <div id="center" class="form">
 
 		<h2>Login</h2>
-		<form id = "login_form" class = "validate" action="" method="post">
+		<form id = "login_form" action="scripts/php/bugMe.php"  class = "validate" method="post">
 			<label for="email">Email Address</label>
 			<input class="input " autocomplete="email" type="email" name="emailaddr" id="email" placeholder="johndoe@example.com" required>
 			<label for="password ">Password</label>
@@ -28,7 +29,7 @@
         <script src="scripts/js/jquery-3.4.1.min.js"></script>
     </div>
     
-    <div id="result"></div>
+</div>
     
 </body>
 </html>
