@@ -41,7 +41,6 @@ window.onload = () => {
 				if(titleexp.test(title.value)&& desexp.test(des.value)&& 
 					userexp.test(user.value)&&priorityexp.test(priority.value)
 					&&errortypeexp.test(errortype.value)){
-					alert('yes');
 					$.ajax({
 						type:"POST",
 						url:"/scripts/php/bugMe.php",
@@ -128,7 +127,7 @@ window.onload = () => {
 
 				});
 
-				alert("validated");
+				//alert("validated");
 				
 				
 			}else{
@@ -159,7 +158,7 @@ window.onload = () => {
 				nt.style.backgroundColor=errorcolor;
 			}	
 
-		alert("not validated");
+		//alert("not validated");
 		}// closeing else
 
 	}
