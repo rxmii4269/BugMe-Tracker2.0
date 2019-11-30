@@ -1,7 +1,7 @@
 <?php
 //for submiting new user 
 if (isset($_POST['new_userbtn'])){  
-echo "hgyu";
+    newuser();
 
 }else{
 
@@ -12,6 +12,11 @@ if (isset($_POST['Submitbtn'])){
 }else{
 
 }
+
+
+if (isset($_POST["login_submit"])) :
+    login();
+endif;
 
 
 
@@ -34,11 +39,6 @@ echo ($title." ".$description." ".$user." ".$error_type." ".$priority);
 //----------------------------------------------------------------------------
 
 
-function login(){
-include_once('database.php');
-
-$email = filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL);
-$password = $_POST['password'];
 
 
 
@@ -93,14 +93,3 @@ function login()
     endif;
 }
 
-
-if (isset($_POST["new_userbtn"])) :
-    newuser();
-
-elseif (isset($_POST["login_submit"])) :
-    login();
-
-
-endif;
-
-}
