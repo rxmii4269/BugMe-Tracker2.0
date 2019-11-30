@@ -17,12 +17,13 @@ window.onload =()=>{
     });
 
     
-    submit.addEventListener( 'click',() =>{
+    submit.addEventListener( 'click',(e) =>{
+        e.preventDefault();
         
         this.$.ajax({
             type: "POST",
             url: "scripts/php/bugMe.php",
-            data:{'email':email.value,'password':password.value},
+            data:{'email':email.value,'password':password.value,"login_submit":submit.value},
             success:(data)=>{
                 if( data === 'success'){
               window.location.href = "dashboard.html";
