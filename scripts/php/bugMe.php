@@ -18,9 +18,31 @@ if (isset($_POST["login_submit"])) :
     login();
 endif;
 
+if(isset($_POST["data"])):
+    assigned_to();
+endif;
 
 
 
+
+
+
+function assigned_to(){
+    include('database.php');
+    try{
+    $stmt = $pdo->prepare("SELECT firstname, lastname FROM Users");
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $assigned_user = [];
+    foreach($results as $row):
+        $results = $row['firstname'].' '.$row['lastname'];
+        array_push($assigned_user,$results);
+    endforeach;
+    var_dump($results);
+}catch(PDOException $e){
+    echo $e->getMessage();
+}
+}
 
 
 
@@ -37,10 +59,6 @@ echo ($title." ".$description." ".$user." ".$error_type." ".$priority);
 
 }
 //----------------------------------------------------------------------------
-
-
-
-
 
 
 function newuser()

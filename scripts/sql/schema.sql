@@ -24,7 +24,7 @@ CREATE TABLE `Issues`
 (
     `id` int(11) NOT NULL auto_increment,
     `title` char(35) NOT NULL default '',
-    `description` char(35) NOT NULL default '',
+    `description` char(255) NOT NULL default '',
     `type` char(35) NOT NULL,
     `priority` char(35) NOT NULL,
     `status` char(35) NOT NULL,
