@@ -26,14 +26,24 @@ endif;
 
 
 function new_issue(){
-//include_once('database.php');
-$title=htmlspecialchars($_POST['title']);
-$description=htmlspecialchars($_POST['description']);
-$user=htmlspecialchars($_POST['user']);
-$error_type= htmlspecialchars($_POST['error_type']);
-$priority=htmlspecialchars($_POST['priority']);
-echo ($title." ".$description." ".$user." ".$error_type." ".$priority);
+include_once('database.php');
+$created="yes";
+$status="Open";
+$created_by=$_SESSION['login_user'];
+$title=filter_var(htmlspecialchars($_POST['title']),FILTER_SANITIZE_STRING);
+$description=filter_var(htmlspecialchars($_POST['description']),FILTER_SANITIZE_STRING);
+$user=filter_var(htmlspecialchars($_POST['user']),FILTER_SANITIZE_STRING);
+$error_type=filter_var(htmlspecialchars($_POST['error_type']),FILTER_SANITIZE_STRING);
+$priority=filter_var(htmlspecialchars($_POST['priority']),FILTER_SANITIZE_STRING);
+try{
+$stmt = $pdo->prepare("INSERT INTO Issues (title,description,type,priority,status,assigned_to,
+     created_by,created,updated) VALUES(?,?,?,?,?,?,?,?)");
 
+     $stmt->execute([$title,$description,$error_type,$priority,$status,$user,$created_by,$created,$created_by]);
+     echo "issue added successfully";
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 
 }
 //----------------------------------------------------------------------------
