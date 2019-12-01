@@ -28,11 +28,9 @@ window.onload = () => {
                 'password': password.value,
                 "login_submit": submit.value
             },
-            success: (data) => {
-
-                if (data === 'success') {
+            success: () => {
+                
                     window.location.href = "dashboard.html";
-                }
             },
             dataType: "html"
 

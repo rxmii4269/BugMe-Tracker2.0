@@ -24,6 +24,11 @@ if (isset($_POST["logout"])) :
 
 endif;
 
+if (isset($_POST["loadTable"])) :
+    setTable();
+endif;
+
+
 
 
 function logout()
@@ -31,8 +36,8 @@ function logout()
     if (isset($_COOKIE[session_name()])) :
         setcookie(session_name(), '', time() - 7000000, '/');
         session_destroy();
-        echo "logged out!!";
-        
+        echo "success";
+
     endif;
 }
 
@@ -46,11 +51,11 @@ function assigned_to()
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $assigned_user = [];
         foreach ($results as $row) :
-            $results =  $row['firstname'] ." ". $row['lastname'];
+            $results =  $row['firstname'] . " " . $row['lastname'];
             array_push($assigned_user, $results);
         endforeach;
-        foreach($assigned_user as $row):
-            echo "<option>".$row."</option>";
+        foreach ($assigned_user as $row) :
+            echo "<option>" . $row . "</option>";
         endforeach;
     } catch (PDOException $e) {
         echo $e->getMessage();
@@ -64,9 +69,7 @@ function new_issue()
 {
     session_start();
     include_once('database.php');
-    $created = "";
     $status = "Open";
-    $updated = "";
     $created_by = $_COOKIE["PHPSESSID"];
     $title = filter_var(htmlspecialchars($_POST['title']), FILTER_SANITIZE_STRING);
     $description = filter_var(htmlspecialchars($_POST['description']), FILTER_SANITIZE_STRING);
@@ -136,3 +139,38 @@ function login()
         echo "Method cannot be post";
     endif;
 }
+?>
+
+<?php function setTable(){
+?>
+
+    <?php include "database.php";?>
+
+    <?php $stmt = $pdo->query("SELECT * FROM Issues"); ?>
+
+    <?php $results = $stmt->fetchAll(PDO::FETCH_ASSOC); ?>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Assigned To</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <?php foreach ($results as $row) : ?>
+            <tr>
+                <td><?= $row["title"]; ?></td>
+                <td><?= $row["type"]; ?></td>
+                <td><?= $row["status"]; ?></td>
+                <td><?= $row["assigned_to"]; ?></td>
+                <td><?= $row["created"]; ?></td>
+            </tr>
+        <?php endforeach;?>
+
+    </table>
+<?php
+}
+?>

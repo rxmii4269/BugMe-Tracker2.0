@@ -1,128 +1,147 @@
-body{
-display: grid;
-grid-template-columns: auto auto auto auto;
-font-weight: bold;
+body {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	font-weight: bold;
 
 
 }
 
-header{
+header {
 	grid-column: 1/5;
 	width: 100%;
-	height:70px;
+	height: 70px;
 	background-color: black;
-	color:white;
+	color: white;
 	display: inline-block;
 
 }
-.logo{
-	position:  relative;
-	top:13px;
-	height :50px;
+
+.logo {
+	position: relative;
+	top: 13px;
+	height: 50px;
 	width: 50px;
 
 }
-.logo,h1.label{
+
+.logo,
+h1.label {
 	display: inline;
-	padding-left:10px; 
+	padding-left: 10px;
 	vertical-align: center;
 }
-.rightsidemenu{
+
+.rightsidemenu {
 	width: 80%;
 	height: 700px;
-	background-color:#D1D1D1;
+	background-color: #D1D1D1;
 
-	
+
 }
 
 
 
-.center{
-width: 100%;
-height: 100%;
-grid-column: 2/5;
-background-color: white;
-	
+.center {
+	width: 100%;
+	height: 100%;
+	grid-column: 2/5;
+	background-color: white;
+
 }
+
 .top h1 {
-display: inline-block;
+	display: inline-block;
 }
-.top button{
+
+.top button {
 	float: right;
-	position:relative;
-	right:100px;
-	top:25px;
+	position: relative;
+	right: 100px;
+	top: 25px;
 	width: 200px;
 	background-color: green;
 	font-size: 20px;
 }
 
-h2.filter{
-	display:inline;
+h2.filter {
+	display: inline;
 	position: relative;
-	top:12px;
-	font-weight:bolder;
+	top: 12px;
+	font-weight: bolder;
 }
-button.filter{
+
+button.filter {
 	background-color: white;
-	color:black;
+	color: black;
 	margin: none;
-	border:0;
-	font-weight:bolder;
+	border: 0;
+	font-weight: bolder;
 }
-.top button:hover,button.filter:hover{
+
+.top button:hover,
+button.filter:hover {
 
 	background-color: blue;
-	color:white;
-	
-	font-weight:bolder;
+	color: white;
+
+	font-weight: bolder;
 }
-.menuoptions{
-	display:block;
-	color:black;
+
+.menuoptions {
+	display: block;
+	color: black;
 	padding-top: 20px;
 	padding-left: 20px;
 	text-decoration: none;
 }
 
-input,input[type=text],input[type=password],textarea{
+input,
+input[type=text],
+input[type=password],
+textarea {
 	background-color: #D1D1D1;
-	display:block;
-	width:40%;
+	display: block;
+	width: 40%;
 	border-radius: 5px;
 	height: 30px;
 	font-size: 20px;
 	border-bottom: 2px solid black;
 	border-right: 2px solid black;
-	}
-textarea{
+}
+
+textarea {
 	height: 100px;
 }
-.input,button{
+
+.input,
+button {
 	position: relative;
-	top:10px;
+	top: 10px;
 	margin: 7px;
 }
 
-button{
+button {
 	background-color: blue;
-	color:white;
+	color: white;
 	width: 120px;
-	height:40px;
+	height: 40px;
 	border-radius: 5px;
-	border:0;
+	border: 0;
 }
-button:hover{
+
+button:hover {
 	background-color: green;
 }
-.newuser{
+
+.newuser {
 	font-size: 50px;
-	
+
 }
-.icons{
+
+.icons {
 	width: 25px;
 	height: 25px;
 	position: relative;
-	top:8px;
+	top: 8px;
 	padding-right: 5px;
 }

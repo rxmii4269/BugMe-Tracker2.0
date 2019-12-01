@@ -9,6 +9,19 @@ window.onload = () => {
 	let logout = document.getElementById('logout');
 
 	this.$('#center').load('home.html', () => {
+		let resultstable = document.getElementById("resultstable");
+		$.ajax({
+			type: "POST",
+			url: "/scripts/php/bugMe.php",
+			data: {
+				"loadTable": "issueTable"
+			},
+			success: (data) => {
+				resultstable.innerHTML = data;
+
+			}
+
+		});
 		let createNewIssueBtn = document.getElementById("create_new_issue");
 
 		createNewIssueBtn.addEventListener('click', () => {
@@ -102,6 +115,20 @@ window.onload = () => {
 	home.addEventListener('click', () => {
 		this.console.log("home clicked");
 		this.$('#center').load('home.html', () => {
+
+			let resultstable = document.getElementById("resultstable");
+			$.ajax({
+				type: "POST",
+				url: "/scripts/php/bugMe.php",
+				data: {
+					"loadTable": "issueTable"
+				},
+				success: (data) => {
+					resultstable.innerHTML = data;
+
+				}
+
+			});
 
 
 			let createNewIssueBtn = document.getElementById("create_new_issue");
@@ -322,7 +349,7 @@ window.onload = () => {
 					emailexp.test(email.value) && pwexp.test(pw.value) &&
 					(pw.value.length) >= 8) {
 
-					this.$.ajax({
+					$.ajax({
 						type: 'POST',
 						url: "scripts/php/bugMe.php",
 						data: {
@@ -333,12 +360,12 @@ window.onload = () => {
 							"new_userbtn": newuser.value
 						},
 						success: function (data) {
-							this.alert(data);
+							alert(data);
 						}
 
 					});
 
-					this.alert("validated");
+					alert("validated");
 
 
 				} else {
@@ -371,7 +398,7 @@ window.onload = () => {
 							nt.style.backgroundColor = errorcolor;
 						}
 
-						this.alert("not validated");
+						alert("not validated");
 					} // closeing else
 
 				}
@@ -401,14 +428,12 @@ window.onload = () => {
 			data: {
 				'logout': "logout"
 			},
-			success: (data) => {
-				if (data == 'logged out!!') {
-					alert(data);
+			success: () => {
 					window.location.href = "/";
-				}
+				
 
 			},
-			error: (data) => {
+			error: () => {
 				this.alert("ERROR");
 			},
 		});
