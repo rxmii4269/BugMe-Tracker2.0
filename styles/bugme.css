@@ -65,7 +65,7 @@ h1.label {
 	right: 100px;
 	top: 25px;
 	width: 200px;
-	background-color: green;
+	background-color: #66bb6a;
 	font-size: 20px;
 }
 
@@ -87,10 +87,8 @@ button.filter {
 .top button:hover,
 button.filter:hover {
 
-	background-color: blue;
+	background-color: #1976d2;
 	color: white;
-
-	font-weight: bolder;
 }
 
 .menuoptions {
@@ -115,6 +113,28 @@ textarea {
 	border-right: 2px solid black;
 }
 
+.filterby:focus{
+	background-color:#1976d2;
+	color: #FFFFFF;
+	font-weight: bold;
+	outline: none;
+}
+
+
+.filterby{
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.filterby:hover{
+	background-color:#1976d2;
+	color: #FFFFFF;
+	font-weight: bold;
+
+}
+
 textarea {
 	height: 100px;
 }
@@ -127,16 +147,17 @@ button {
 }
 
 button {
-	background-color: blue;
+	background-color: #1976d2;
 	color: white;
 	width: 120px;
 	height: 40px;
 	border-radius: 5px;
 	border: 0;
+	cursor: pointer;
 }
 
 button:hover {
-	background-color: green;
+	background-color: #66bb6a;
 }
 
 .newuser {
@@ -156,9 +177,10 @@ button:hover {
 .open{
 	color: #FFFFFF;
 	border-radius: 4px;
-	background: #43a047;
+	background: #66bb6a;
 	padding: 10px;
 	text-align: center;
+	text-transform: uppercase;
 
 }
 
@@ -168,6 +190,7 @@ button:hover {
 	background: orangered;
 	padding: 8px;
 	text-align: center;
+	text-transform: uppercase;
 
 }
 
@@ -177,6 +200,7 @@ button:hover {
 	background: yellow;
 	padding: 8px;
 	text-align: center;
+	text-transform: uppercase;
 
 }
 
@@ -186,13 +210,16 @@ thead{
 }
 
 table{
-	margin-top: 1em;
+	margin-top: 3em;
 	border-collapse: collapse;
 	font-size: 13px;
+	width: 50em;
+	
 }
 
 th{
 	padding: 8px;
+	
 }
 
 td{
@@ -214,6 +241,19 @@ td{
 	font-weight: bold;
 }
 
-.upper{
-	text-transform: uppercase;
+
+
+.create_new{
+	cursor: pointer;
 }
+
+.thborder{
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.thborder-right{
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+

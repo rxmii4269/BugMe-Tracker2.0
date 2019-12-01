@@ -153,16 +153,16 @@ function login()
     <table>
         <thead>
             <tr>
-                <th class="left-align">Title</th>
+                <th class="left-align thborder">Title</th>
                 <th class="left-align">Type</th>
                 <th class="left-align">Status</th>
                 <th class="left-align">Assigned To</th>
-                <th class="left-align">Created</th>
+                <th class="left-align thborder-right">Created</th>
             </tr>
         </thead>
         <?php foreach ($results as $row) : ?>
             <tr>
-                <td class="left-align bold"><?= '#'.$row["id"]." ".$row["title"]; ?></td>
+                <td id="test" class="left-align bold"><?= '#'.$row["id"]." ".$row["title"]; ?>
                 <td class="left-align"><?= $row["type"]; ?></td>
                 <td id="statusType" class="open upper left-align padding-10"><?= $row["status"]; ?></td>
                 <td class="left-align"><?= $row["assigned_to"]; ?></td>

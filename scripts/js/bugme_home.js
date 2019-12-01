@@ -18,10 +18,14 @@ window.onload = () => {
 			},
 			success: (data) => {
 				resultstable.innerHTML = data;
+				
+				let statusType = document.getElementById('statusType');
+				alert(statusType.value);
 
 			}
 
 		});
+
 		let createNewIssueBtn = document.getElementById("create_new_issue");
 
 		createNewIssueBtn.addEventListener('click', () => {
@@ -113,12 +117,9 @@ window.onload = () => {
 
 
 	home.addEventListener('click', () => {
-		this.console.log("home clicked");
 		this.$('#center').load('home.html', () => {
 
 			let resultstable = document.getElementById("resultstable");
-			let statustype = document.getElementById("statusType");
-			alert(statustype);
 			$.ajax({
 				type: "POST",
 				url: "/scripts/php/bugMe.php",
@@ -230,7 +231,6 @@ window.onload = () => {
 	//------------------------------------------------------------------------------------------------
 
 	issue.addEventListener('click', () => {
-		this.console.log(issue);
 		let data = "data";
 
 
@@ -329,7 +329,6 @@ window.onload = () => {
 
 	//---------------------------------------------------------------------------
 	adduser.addEventListener('click', () => {
-		this.console.log('userclicked');
 
 		this.$('#center').load('new_user.html', () => {
 
