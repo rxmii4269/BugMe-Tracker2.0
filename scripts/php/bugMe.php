@@ -153,20 +153,20 @@ function login()
     <table>
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th>Assigned To</th>
-                <th>Created</th>
+                <th class="left-align">Title</th>
+                <th class="left-align">Type</th>
+                <th class="left-align">Status</th>
+                <th class="left-align">Assigned To</th>
+                <th class="left-align">Created</th>
             </tr>
         </thead>
         <?php foreach ($results as $row) : ?>
             <tr>
-                <td><?= $row["title"]; ?></td>
-                <td><?= $row["type"]; ?></td>
-                <td><?= $row["status"]; ?></td>
-                <td><?= $row["assigned_to"]; ?></td>
-                <td><?= $row["created"]; ?></td>
+                <td class="left-align bold"><?= '#'.$row["id"]." ".$row["title"]; ?></td>
+                <td class="left-align"><?= $row["type"]; ?></td>
+                <td id="statusType" class="open upper left-align padding-10"><?= $row["status"]; ?></td>
+                <td class="left-align"><?= $row["assigned_to"]; ?></td>
+                <td class="left-align padding-8"><?= $row["created"]; ?></td>
             </tr>
         <?php endforeach;?>
 

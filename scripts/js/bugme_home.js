@@ -117,6 +117,8 @@ window.onload = () => {
 		this.$('#center').load('home.html', () => {
 
 			let resultstable = document.getElementById("resultstable");
+			let statustype = document.getElementById("statusType");
+			alert(statustype);
 			$.ajax({
 				type: "POST",
 				url: "/scripts/php/bugMe.php",
@@ -125,6 +127,8 @@ window.onload = () => {
 				},
 				success: (data) => {
 					resultstable.innerHTML = data;
+
+
 
 				}
 
@@ -429,8 +433,8 @@ window.onload = () => {
 				'logout': "logout"
 			},
 			success: () => {
-					window.location.href = "/";
-				
+				window.location.href = "/";
+
 
 			},
 			error: () => {

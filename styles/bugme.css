@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html,body{
+	font-family: 'Roboto',sans-serif;
+}
+
 body {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
@@ -144,4 +150,70 @@ button:hover {
 	position: relative;
 	top: 8px;
 	padding-right: 5px;
+}
+
+
+.open{
+	color: #FFFFFF;
+	border-radius: 4px;
+	background: #43a047;
+	padding: 10px;
+	text-align: center;
+
+}
+
+.closed{
+	color: #FFFFFF;
+	border-radius: 4px;
+	background: orangered;
+	padding: 8px;
+	text-align: center;
+
+}
+
+.inprogress{
+	color: #000000;
+	border-radius: 4px;
+	background: yellow;
+	padding: 8px;
+	text-align: center;
+
+}
+
+thead{
+	border-radius: 4px;
+	background: lightgray;
+}
+
+table{
+	margin-top: 1em;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+th{
+	padding: 8px;
+}
+
+td{
+	padding: 10px;
+	padding-right: 20px;
+	border-bottom: 1px lightgray solid;
+	font-weight: normal;
+}
+
+.left-align{
+	text-align: left;
+}
+
+.padding-8{
+	padding-right: 8px;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.upper{
+	text-transform: uppercase;
 }
