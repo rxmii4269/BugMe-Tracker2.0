@@ -141,10 +141,11 @@ function login()
 }
 ?>
 
-<?php function setTable(){
-?>
+<?php function setTable()
+{
+    ?>
 
-    <?php include "database.php";?>
+    <?php include "database.php"; ?>
 
     <?php $stmt = $pdo->query("SELECT * FROM Issues"); ?>
 
@@ -162,13 +163,13 @@ function login()
         </thead>
         <?php foreach ($results as $row) : ?>
             <tr>
-                <td id="test" class="left-align bold"><?= '#'.$row["id"]." ".$row["title"]; ?>
+                <td class="left-align bold"><?= '#' . $row["id"] . " " ?><a href="#"><?= $row["title"]; ?></a></td>
                 <td class="left-align"><?= $row["type"]; ?></td>
-                <td id="statusType" class="open upper left-align padding-10"><?= $row["status"]; ?></td>
+                <td class="open upper left-align padding-10 statusType"><?= $row["status"]; ?></td>
                 <td class="left-align"><?= $row["assigned_to"]; ?></td>
                 <td class="left-align padding-8"><?= $row["created"]; ?></td>
             </tr>
-        <?php endforeach;?>
+        <?php endforeach; ?>
 
     </table>
 <?php

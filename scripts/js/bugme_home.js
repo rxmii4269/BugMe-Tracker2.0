@@ -18,9 +18,20 @@ window.onload = () => {
 			},
 			success: (data) => {
 				resultstable.innerHTML = data;
-				
-				let statusType = document.getElementById('statusType');
-				alert(statusType.value);
+
+				let statusType = document.getElementsByClassName('statusType');
+				for (let i = 0; i < statusType.length; i++) {
+					if (statusType[i].innerText === "OPEN") {
+						statusType[i].classList.add("open");
+
+					} else if (statusType[i].innerText === "IN PROGRESS") {
+						statusType[i].classList.add("inprogress");
+
+					} else if (statusType[i].innerText === "CLOSED") {
+						statusType[i].classList.add("closed");
+
+					}
+				}
 
 			}
 
@@ -128,6 +139,20 @@ window.onload = () => {
 				},
 				success: (data) => {
 					resultstable.innerHTML = data;
+
+					let statusType = document.getElementsByClassName('statusType');
+					for (let i = 0; i < statusType.length; i++) {
+						if (statusType[i].innerText === "OPEN") {
+							statusType[i].classList.add("open");
+
+						} else if (statusType[i].innerText === "IN PROGRESS") {
+							statusType[i].classList.add("inprogress");
+
+						} else if (statusType[i].innerText === "CLOSED") {
+							statusType[i].classList.add("closed");
+
+						}
+					}
 
 
 
