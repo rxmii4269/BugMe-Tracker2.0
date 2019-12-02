@@ -28,6 +28,47 @@ if (isset($_POST["loadTable"])) :
     setTable();
 endif;
 
+if (isset($_POST["id"])) :
+    extendIssue();
+endif;
+
+if (isset($_POST["markclosed"])) :
+    markAsClosed();
+endif;
+
+if (isset($_POST['markinprogress'])) :
+    markInProgress();
+endif;
+
+function markAsClosed()
+{
+    include 'database.php';
+    $markclosed = $_POST["markclosed"];
+    $id = $_POST['id'];
+
+    try {
+        $stmt = $pdo->prepare("UPDATE Issues SET status = ?, updated = NOW() WHERE id= ? ");
+        $stmt->execute([$markclosed, $id]);
+        echo "Closed";
+    } catch (PDOException $e) {
+        $e->getMessage();
+    }
+}
+
+
+function markInProgress()
+{
+    include 'database.php';
+    $markInProgress = $_POST['markinprogress'];
+    $id = $_POST['id'];
+    try {
+        $stmt = $pdo->prepare("UPDATE Issues SET status = ?, updated = NOW() WHERE id = ?");
+        $stmt->execute([$markInProgress, $id]);
+        echo "In Progress";
+    } catch (PDOException $e) {
+        $e->getMessage();
+    }
+}
 
 
 
@@ -78,7 +119,7 @@ function new_issue()
     $priority = filter_var(htmlspecialchars($_POST['priority']), FILTER_SANITIZE_STRING);
     try {
         $stmt = $pdo->prepare("INSERT INTO Issues (title,description,type,priority,status,assigned_to,
-     created_by,created,updated) VALUES(?,?,?,?,?,?,?,CURDATE(),CURDATE())");
+     created_by,created,updated) VALUES(?,?,?,?,?,?,?,NOW(),NOW())");
 
         $stmt->execute([$title, $description, $error_type, $priority, $status, $user, $created_by]);
         echo "issue added successfully";
@@ -100,7 +141,7 @@ function newuser()
 
 
 
-        $stmt = $pdo->prepare("INSERT INTO Users (firstname,lastname,password,email,date_joined) VALUES(?,?,SHA2(?,0),?,CURDATE())");
+        $stmt = $pdo->prepare("INSERT INTO Users (firstname,lastname,password,email,date_joined) VALUES(?,?,SHA2(?,0),?,NOW())");
         $stmt->execute([$firstname, $lastname, $password, $email]);
         echo "User saved successfully";
     endif;
@@ -151,7 +192,7 @@ function login()
 
     <?php $results = $stmt->fetchAll(PDO::FETCH_ASSOC); ?>
 
-    <table>
+    <table id="issueTable">
         <thead>
             <tr>
                 <th class="left-align thborder">Title</th>
@@ -163,11 +204,11 @@ function login()
         </thead>
         <?php foreach ($results as $row) : ?>
             <tr>
-                <td class="left-align bold"><?= '#' . $row["id"] . " " ?><a href="#"><?= $row["title"]; ?></a></td>
+                <td id="issue" class="left-align bold"><?= '#' . $row["id"] . " " ?><a href="#"><?= $row["title"]; ?></a></td>
                 <td class="left-align"><?= $row["type"]; ?></td>
                 <td class="open upper left-align padding-10 statusType"><?= $row["status"]; ?></td>
                 <td class="left-align"><?= $row["assigned_to"]; ?></td>
-                <td class="left-align padding-8"><?= $row["created"]; ?></td>
+                <td class="left-align padding-8"><?= date("o-m-d",strtotime($row["created"])); ?></td>
             </tr>
         <?php endforeach; ?>
 
@@ -175,3 +216,81 @@ function login()
 <?php
 }
 ?>
+
+<?php
+
+function extendIssue()
+{
+    include 'database.php';
+
+    $id = $_POST['id'];
+
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM Issues WHERE id = ? ");
+        $stmt->execute([$id]);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $issue_array = [];
+        foreach ($results as $row) :
+            $id = $row["id"];
+            $title = $row['title'];
+            $description = $row['description'];
+            $type = $row['type'];
+            $priority = $row['priority'];
+            $status = $row['status'];
+            $assignedTo = $row['assigned_to'];
+            $created_by = $row['created_by'];
+            $created = date("F j, o", strtotime($row['created'])) . " at" . date(" g:iA", strtotime($row['created']));
+            $updated = date("F j, o", strtotime($row['updated'])) . " at" . date(" g:iA", strtotime($row['updated']));
+            array_push(
+                $issue_array,
+                $id,
+                $title,
+                $description,
+                $type,
+                $priority,
+                $status,
+                $assignedTo,
+                $created_by,
+                $created,
+                $updated
+            );
+        endforeach;
+        //echo json_encode($issue_array);
+    } catch (PDOException $e) {
+        $e->getMessage();
+    } ?>
+
+    <div id="floatleft">
+        <h1><?= $title ?></h1>
+        <p><?= "Issue" . " " . "#" . $id  ?></p>
+
+        <p class="description"><?= $description  ?></p>
+
+        <ul>
+            <li><?= "Issue created on $created by $created_by" ?></li>
+            <li><?= "Last updated on $updated" ?></li>
+        </ul>
+    </div>
+
+    <div id="floatright">
+        <div id="border">
+            <h3>Assigned To</h3>
+            <p><?= $assignedTo ?></p>
+
+            <h3>Type:</h3>
+            <p><?= $type ?></p>
+
+            <h3>Priority:</h3>
+            <p><?= $priority ?></p>
+
+            <h3>Status:</h3>
+            <p class="margin-bottom"><?= $status ?></p>
+        </div>
+
+        <div id="block">
+            <button id="closedbtn">Mark as Closed</button>
+            <button id="inprogressbtn">Mark In Progress</button>
+        </div>
+    </div>
+
+<?php } ?>
