@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+body,header{
+    margin: 0;
+    padding: 0;
+}
 
 body{
     text-align: center;
@@ -14,7 +18,7 @@ body .form
     border-radius: 5px;
     height: auto;
     padding: 15px 18px;
-    margin: 10% auto;
+    margin: 5% auto;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -79,4 +83,6 @@ header{
 
 h1.label{
     padding-top: 15px;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
