@@ -72,8 +72,7 @@ window.onload = () => {
 										markinprogress: "In progress",
 										"id": id
 									},
-									success: () => {
-									}
+									success: () => {}
 								});
 							});
 						},
@@ -282,8 +281,7 @@ window.onload = () => {
 											markinprogress: "In progress",
 											"id": id
 										},
-										success: ()=>{
-										}
+										success: () => {}
 									});
 								});
 							},
@@ -517,7 +515,7 @@ window.onload = () => {
 			var email = document.getElementById("email");
 			var nameexp = /[a-z]+/;
 			var pwexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-			var emailexp = /[a-zA-z0-9]+\@[a-z]+\.[a-z]{3}/;
+			var emailexp = /[a-zA-z0-9]+@[a-z]+\.[a-z]{3}/;
 
 			newuser.addEventListener("click", function () {
 				var nt = document.getElementById("firstname");

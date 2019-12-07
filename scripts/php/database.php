@@ -1,9 +1,5 @@
 <?php
 
-
-	
-
-
 $host = 'localhost';
 $username = 'bugMe';
 $password = 'iNFO@2180';

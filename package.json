@@ -1,0 +1,23 @@
+{
+  "name": "bugme-tracker",
+  "version": "1.0.0",
+  "description": "web dev final project",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rxmii4269/BugMe-Tracker.git"
+  },
+  "author": "Romaine Murray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rxmii4269/BugMe-Tracker/issues"
+  },
+  "homepage": "https://github.com/rxmii4269/BugMe-Tracker#readme",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.0.1"
+  }
+}

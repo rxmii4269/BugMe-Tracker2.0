@@ -108,7 +108,6 @@ function assigned_to()
 
 function new_issue()
 {
-    session_start();
     include_once('database.php');
     $status = "Open";
     $created_by = $_COOKIE["PHPSESSID"];

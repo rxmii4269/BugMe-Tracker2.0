@@ -52,3 +52,31 @@ input{
     margin-left: 0px;
 
 }
+
+
+.logo {
+	position: relative;
+	top: 13px;
+	height: 30px;
+    width: 30px;
+    float: left;
+
+}
+
+.logo,
+h1.label {
+    display: flex;
+	padding-left: 10px;
+}
+
+header{
+    width: auto;
+    height: 50px;
+    background-color: #000000;
+    font-size:9px;
+    color: white;
+}
+
+h1.label{
+    padding-top: 15px;
+}
