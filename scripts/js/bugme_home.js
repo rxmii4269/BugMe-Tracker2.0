@@ -7,7 +7,7 @@ window.onload = () => {
 	let logout = document.getElementById("logout");
 	let cookieName = document.cookie.split("=")[1];
 
-	this.$("#center").load("home.html", () => {
+	$("#center").load("home.html", () => {
 		let resultstable = document.getElementById("resultstable");
 		let allbtn = document.getElementById("all");
 		let openbtn = document.getElementById("open");
@@ -26,7 +26,7 @@ window.onload = () => {
 				let td = "";
 				let assignedto = "";
 				let id = "";
-				this.$("#issueTable tbody tr #issue").on("click", function () {
+				$("#issueTable tbody tr #issue").on("click", function () {
 					id = $(this)
 						.text()
 						.substring(1, 3);
@@ -136,7 +136,7 @@ window.onload = () => {
 		let createNewIssueBtn = document.getElementById("create_new_issue");
 
 		createNewIssueBtn.addEventListener("click", () => {
-			this.$("#center").load("new_issue.html ", function () {
+			$("#center").load("new_issue.html ", function () {
 				var errorcolor = "#E45449";
 				var newissue = document.getElementById("new_issuebtn");
 				var title = document.getElementById("title");
@@ -159,7 +159,7 @@ window.onload = () => {
 						data: "data"
 					},
 					success: data => {
-						// alert(data);
+						
 						userlst.innerHTML = data;
 					}
 				});
@@ -172,7 +172,7 @@ window.onload = () => {
 						priorityexp.test(priority.value) &&
 						errortypeexp.test(errortype.value)
 					) {
-						alert("yes");
+						
 
 						$.ajax({
 							type: "POST",
@@ -185,8 +185,8 @@ window.onload = () => {
 								priority: priority.value,
 								Submitbtn: newissue.value
 							},
-							success: function (data) {
-								alert(data);
+							success: function () {
+								
 							}
 						});
 					} else {
@@ -207,7 +207,7 @@ window.onload = () => {
 							errortype.style.backgroundColor = errorcolor;
 						}
 
-						alert("remember to fix reg expression");
+						
 					} // end of else statement
 				}); // end of submit issue function
 			}); // end of  add issue event listener
@@ -215,7 +215,7 @@ window.onload = () => {
 	});
 
 	home.addEventListener("click", () => {
-		this.$("#center").load("home.html", () => {
+		$("#center").load("home.html", () => {
 			let allbtn = document.getElementById("all");
 			let openbtn = document.getElementById("open");
 			let myTicketsbtn = document.getElementById("mytickets");
@@ -235,7 +235,7 @@ window.onload = () => {
 					let assignedto = "";
 					let id = "";
 
-					this.$("#issueTable tbody tr #issue").on("click", function () {
+					$("#issueTable tbody tr #issue").on("click", function () {
 						id = $(this)
 							.text()
 							.substring(1, 3);
@@ -344,7 +344,7 @@ window.onload = () => {
 
 			let createNewIssueBtn = document.getElementById("create_new_issue");
 			createNewIssueBtn.addEventListener("click", () => {
-				this.$("#center").load("new_issue.html ", function () {
+				$("#center").load("new_issue.html ", function () {
 					var errorcolor = "#E45449";
 					var newissue = document.getElementById("new_issuebtn");
 					var title = document.getElementById("title");
@@ -367,7 +367,7 @@ window.onload = () => {
 							data: "data"
 						},
 						success: data => {
-							// alert(data);
+							
 							userlst.innerHTML = data;
 						}
 					});
@@ -380,7 +380,7 @@ window.onload = () => {
 							priorityexp.test(priority.value) &&
 							errortypeexp.test(errortype.value)
 						) {
-							alert("yes");
+							
 
 							$.ajax({
 								type: "POST",
@@ -393,8 +393,8 @@ window.onload = () => {
 									priority: priority.value,
 									Submitbtn: newissue.value
 								},
-								success: function (data) {
-									alert(data);
+								success: function () {
+									
 								}
 							});
 						} else {
@@ -415,7 +415,7 @@ window.onload = () => {
 								errortype.style.backgroundColor = errorcolor;
 							}
 
-							alert(" remember to fix reg expression");
+							
 						} // end of else statement
 					}); // end of submit issue function
 				});
@@ -427,7 +427,7 @@ window.onload = () => {
 	issue.addEventListener("click", () => {
 		let data = "data";
 
-		this.$("#center").load("new_issue.html ", function () {
+		$("#center").load("new_issue.html ", function () {
 			var errorcolor = "#E45449";
 			var newissue = document.getElementById("new_issuebtn");
 			var title = document.getElementById("title");
@@ -450,7 +450,7 @@ window.onload = () => {
 					data: data
 				},
 				success: data => {
-					// alert(data);
+					
 					userlst.innerHTML = data;
 				}
 			});
@@ -463,7 +463,7 @@ window.onload = () => {
 					priorityexp.test(priority.value) &&
 					errortypeexp.test(errortype.value)
 				) {
-					alert("yes");
+					
 
 					$.ajax({
 						type: "POST",
@@ -476,8 +476,8 @@ window.onload = () => {
 							priority: priority.value,
 							Submitbtn: newissue.value
 						},
-						success: function (data) {
-							alert(data);
+						success: function () {
+							
 						}
 					});
 				} else {
@@ -498,7 +498,7 @@ window.onload = () => {
 						errortype.style.backgroundColor = errorcolor;
 					}
 
-					alert(" remember to fix reg expression");
+					
 				} // end of else statement
 			}); // end of submit issue function
 		}); // end of  add issue event listener
@@ -506,7 +506,7 @@ window.onload = () => {
 
 	//---------------------------------------------------------------------------
 	adduser.addEventListener("click", () => {
-		this.$("#center").load("new_user.html", () => {
+		$("#center").load("new_user.html", () => {
 			var newuser = document.querySelector("#newuserbtn");
 			var errorcolor = "#E45449";
 			var first = document.getElementById("firstname");
@@ -537,12 +537,12 @@ window.onload = () => {
 							email: email.value,
 							new_userbtn: newuser.value
 						},
-						success: function (data) {
-							alert(data);
+						success: function () {
+							
 						}
 					});
 
-					alert("validated");
+					
 				} else {
 					if (nameexp.test(first.value) == false) {
 						nt.style.backgroundColor = errorcolor;
@@ -563,17 +563,17 @@ window.onload = () => {
 							nt.style.backgroundColor = errorcolor;
 						}
 
-						alert("not validated");
+						
 					} // closeing else
 				}
 
-				//alert("not validated");
+				
 			}); // closeing else
 		}); // close load newuser even listener
 	}); //close adduser event listener
 
 	logout.addEventListener("click", () => {
-		this.$.ajax({
+		$.ajax({
 			type: "POST",
 			url: "/scripts/php/bugMe.php",
 			data: {
@@ -583,7 +583,6 @@ window.onload = () => {
 				window.location.href = "/";
 			},
 			error: () => {
-				this.alert("ERROR");
 			}
 		});
 	});

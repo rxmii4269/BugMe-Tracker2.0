@@ -1,3 +1,4 @@
+CREATE DATABASE bugMe_Tracker;
 USE bugMe_Tracker;
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users`
@@ -34,3 +35,4 @@ CREATE TABLE `Issues`
     `updated` char(35) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=UTF8MB4;
+GRANT ALL PRIVILEGES ON bugMe_Tracker.* TO 'bugMe'@'localhost' IDENTIFIED BY 'iNFO@2180';

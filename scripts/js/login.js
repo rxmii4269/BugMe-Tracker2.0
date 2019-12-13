@@ -12,7 +12,7 @@ window.onload = () => {
     }
 
 
-    this.$("#login_form").submit((e) => {
+    $("#login_form").submit((e) => {
         e.preventDefault();
     });
 
@@ -20,7 +20,7 @@ window.onload = () => {
     submit.addEventListener('click', (e) => {
         e.preventDefault();
 
-        this.$.ajax({
+        $.ajax({
             type: "POST",
             url: "scripts/php/bugMe.php",
             data: {
