@@ -82,7 +82,7 @@ h2.filter {
 button.filter {
 	background-color: white;
 	color: black;
-	margin: none;
+	margin: 0;
 	border: 0;
 	font-weight: bolder;
 }

@@ -1,5 +1,4 @@
 "use strict";
-
 window.onload = () => {
     let email = document.getElementById("email");
     let password = document.getElementById("password");
@@ -28,9 +27,12 @@ window.onload = () => {
                 'password': password.value,
                 "login_submit": submit.value
             },
-            success: () => {
-                
+            success: (data) => {
+                if (data != null || data != ''){
                     window.location.href = "dashboard.html";
+                } else{
+                    alert(data);
+                }
             },
             dataType: "html"
 
@@ -38,5 +40,4 @@ window.onload = () => {
 
 
     });
-
 };

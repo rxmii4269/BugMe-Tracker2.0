@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BugMe Tracker</title>
-   
-    <link rel="stylesheet" href="styles/login.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BugMe Tracker</title>
+
+	<link rel="stylesheet" href="styles/login.css">
 </head>
 
-<body >
+<body>
 	<header>
-		<img class="logo" src="/images/logo.png">
+		<img class="logo" alt="BugMe Logo" src="/images/logo.png">
 		<h1 class="label">BugMe Issue Tracker </h1>
 	</header>
 
-    <div id="result">
-    <div id="center" class="form">
+	<div id="result">
+		<div id="center" class="form">
 
-		<h2>Login</h2>
-		<form id = "login_form" action="scripts/php/bugMe.php"  class = "validate" method="post">
-			<label for="email">Email Address</label>
-			<input class="input " autocomplete="email" type="email" name="emailaddr" id="email" placeholder="johndoe@example.com" required>
-			<label for="password ">Password</label>
-			<input autocomplete="current-password" class="input" type="password" name="pwd" id="password" placeholder="Password" required>
+			<h2>Login</h2>
+			<form id="login_form" action="scripts/php/bugMe.php" class="validate" method="post">
+				<label for="email">Email Address</label>
+				<input class="input " autocomplete="email" type="email" name="emailaddr" id="email"
+					placeholder="johndoe@example.com" required>
+				<label for="password">Password</label>
+				<input autocomplete="current-password" class="input" type="password" name="pwd" id="password"
+					placeholder="Password" required>
 
-			<button id="submit" type="submit">Login</button>
+				<button id="submit" type="submit">Login</button>
 
 
-		</form>
-        <script src="scripts/js/login.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    </div>
-    
-</div>
-    
+			</form>
+			<script src="scripts/js/login.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		</div>
+
+	</div>
+
 </body>
+
 </html>

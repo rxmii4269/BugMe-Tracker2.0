@@ -167,7 +167,6 @@ function login()
                 session_id($dbfirstname);
                 session_start();
                 $_SESSION['id'] = $dbfirstname;
-                echo "success";
             else :
                 var_dump($results[0]['password']);
                 var_dump(hash('sha256', $password));
@@ -254,7 +253,6 @@ function extendIssue()
                 $updated
             );
         endforeach;
-        //echo json_encode($issue_array);
     } catch (PDOException $e) {
         $e->getMessage();
     } ?>
