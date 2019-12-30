@@ -163,15 +163,15 @@ function login()
             $hashed_password = hash("sha256", $password);
             $dbfirstname = $results[0]['firstname'];
 
-            if ($db_password === $hashed_password) :
+            if ($db_password === $hashed_password && $email === $email) :
                 session_id($dbfirstname);
                 session_start();
                 $_SESSION['id'] = $dbfirstname;
+                echo 'success';
             else :
-                var_dump($results[0]['password']);
-                var_dump(hash('sha256', $password));
+                echo "Login information is incorrect";
             endif;
-        else :
+        elseif($email === '' && $password === '') :
             echo "Login form cannot be empty";
         endif;
     else :

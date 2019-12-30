@@ -3,6 +3,8 @@ window.onload = () => {
     let email = document.getElementById("email");
     let password = document.getElementById("password");
     let submit = document.getElementById('submit');
+    let errorcolor = "#E45449";
+    let normalcolor = '#FFFFFF';
 
 
     let forms = document.querySelectorAll('form');
@@ -11,32 +13,43 @@ window.onload = () => {
     }
 
 
-    $("#login_form").submit((e) => {
-        e.preventDefault();
-    });
-
 
     submit.addEventListener('click', (e) => {
         e.preventDefault();
 
-        $.ajax({
-            type: "POST",
-            url: "scripts/php/bugMe.php",
-            data: {
-                'email': email.value,
-                'password': password.value,
-                "login_submit": submit.value
-            },
-            success: (data) => {
-                if (data != null || data != ''){
-                    window.location.href = "dashboard.html";
-                } else{
-                    alert(data);
+        if (email.value === '' && password.value === '') {
+            email.style.backgroundColor = errorcolor;
+            password.style.backgroundColor = errorcolor;
+        } else if (email.value != '' && password.value === '') {
+            email.style.backgroundColor = normalcolor;
+            password.style.backgroundColor = errorcolor;
+        } else if (email.value === '' && password.value != '') {
+            email.style.backgroundColor = errorcolor;
+            password.style.backgroundColor = normalcolor;
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "scripts/php/bugMe.php",
+                data: {
+                    'email': email.value,
+                    'password': password.value,
+                    "login_submit": submit.value
+                },
+                success: (data) => {
+                    handleData(data.trim());
                 }
-            },
-            dataType: "html"
+            });
+            const handleData = (data) =>{
+                if (data === 'success'){
+                    window.location.href = 'dashboard.html'
+                } else {
+                    let error = document.getElementById('error');
+                    error.innerText = data;
+                }
+            }
 
-        });
+        }
+
 
 
     });

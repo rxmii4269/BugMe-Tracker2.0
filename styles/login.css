@@ -86,3 +86,8 @@ h1.label{
     margin-block-start: 0;
     margin-block-end: 0;
 }
+
+#error{
+    color: red;
+    font-family: 'Roboto', sans-serif;
+}
