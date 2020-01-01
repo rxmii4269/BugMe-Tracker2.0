@@ -19,8 +19,6 @@ body .form
     height: auto;
     padding: 15px 18px;
     margin: 5% auto;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     font-family: 'Roboto',sans-serif;
 }
@@ -46,14 +44,14 @@ input{
 }
 
 #submit{
-    border:none;
+    border: none;
     background: #1abc9c;
     cursor: pointer;
     border-radius: 3px;
     padding: 6px;
     width: 100px;
     color: white;
-    margin-left: 0px;
+    margin-left: 0;
 
 }
 

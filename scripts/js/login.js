@@ -20,10 +20,10 @@ window.onload = () => {
         if (email.value === '' && password.value === '') {
             email.style.backgroundColor = errorcolor;
             password.style.backgroundColor = errorcolor;
-        } else if (email.value != '' && password.value === '') {
+        } else if (email.value !== '' && password.value === '') {
             email.style.backgroundColor = normalcolor;
             password.style.backgroundColor = errorcolor;
-        } else if (email.value === '' && password.value != '') {
+        } else if (email.value === '' && password.value !== '') {
             email.style.backgroundColor = errorcolor;
             password.style.backgroundColor = normalcolor;
         } else {

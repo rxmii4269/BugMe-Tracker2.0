@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html>
-
 <body>
 
 	<h1 class="new_issue">Create Issue </h1>
 
 	<form id="create_issue" action="" method="post">
-		<label class="input">Title</label>
-		<input id="title" class="input" type="text" name="title" value=''>
-		<label class="input">Description</label>
-		<textarea id="description" class="input" type="text" name="description" form="create_issue" value=''></textarea>
-		<label class="input">Assigned To:</label>
-		<input id="user" class="input" list="userlist" name="user" value=''>
-		<label class="input">Type</label>
-		<input id="error_type" class="input" list="type" name="error_type" value=''>
-		<label class="input">Priority</label>
-		<input id="priority" class="input" list="prioritylist" name="priority" value=''>
+        <label class="input" for="title">Title</label>
+        <input class="input" id="title" name="title" type="text" value=''>
+        <label class="input" for="description">Description</label>
+        <textarea class="input" form="create_issue" id="description" name="description" type="text"></textarea>
+        <label class="input" for="user">Assigned To:</label>
+        <input class="input" id="user" list="userlist" name="user" value=''>
+        <label class="input" for="error_type">Type</label>
+        <input class="input" id="error_type" list="type" name="error_type" value=''>
+        <label class="input" for="priority">Priority</label>
+        <input class="input" id="priority" list="prioritylist" name="priority" value=''>
 
 
+        <datalist id="userlist"></datalist>
 
-		<datalist id="userlist"></datalist>
+        <datalist id="type">
+            <option>Bug</option>
+            <option>Proposal</option>
+            <option>Task</option>
+        </datalist>
 
-		<datalist id="type">
-			<option>Bug</option>
-			<option>Proposal</option>
-			<option>Task</option>
-		</datalist>
+        <datalist id="prioritylist">
+            <option>Minor</option>
+            <option>Major</option>
+            <option>Critical</option>
+        </datalist>
 
-		<datalist id="prioritylist">
-			<option>Minor</option>
-			<option>Major</option>
-			<option>Critical</option>
-		</datalist>
+        <br>
 
-		<br>
-
-		<button id="new_issuebtn" type="button" name="Submitbtn" value="Submit">Submit</button>
-	</form>
+        <button id="new_issuebtn" name="Submitbtn" type="button" value="Submit">Submit</button>
+    </form>
 
 
 </body>
