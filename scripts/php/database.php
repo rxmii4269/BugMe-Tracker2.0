@@ -1,9 +1,9 @@
 <?php
 
-$host = 'mysql://bb94ec1873173c:e48319e2@us-cdbr-east-02.cleardb.com/heroku_87fbc08c29a250e?reconnect=true';
-$username = 'bb94ec1873173c';
-$password = 'e48319e2';
-$dbname = 'heroku_87fbc08c29a250e';
+$host = 'd1kb8x1fu8rhcnej.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+$username = 'rr2spmhdp6sb2vxa';
+$password = 'mtm23flbqkf1usk5';
+$dbname = 'qct0nyo6v3qvg60y';
 
 
 $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4",$username,$password);
