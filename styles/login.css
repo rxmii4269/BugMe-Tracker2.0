@@ -1,91 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-body,header{
-    margin: 0;
-    padding: 0;
+body,
+header {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    text-align: center;
-    
+body {
+  text-align: center;
 }
 
-body .form
-{
-    background-color: #5c007a;
-    display: inline-block;
-    border-radius: 5px;
-    height: auto;
-    padding: 15px 18px;
-    margin: 5% auto;
-    text-align: center;
-    font-family: 'Roboto',sans-serif;
+body .form {
+  background-color: #5c007a;
+  display: inline-block;
+  border-radius: 5px;
+  height: auto;
+  padding: 15px 18px;
+  margin: 5% auto;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 
-h2,label{
-    color: #ffffff;
-    font-family: 'Roboto',sans-serif;
+h2,
+label {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
 }
 
-h1,input::-webkit-input-placeholder,button{
-    font-family: 'Roboto',sans-serif;
-    transition: all 0.3s ease-in-out;
+h1,
+input::-webkit-input-placeholder,
+button {
+  font-family: "Roboto", sans-serif;
+  transition: all 0.3s ease-in-out;
 }
 
-input{
-    margin: 40px 25px;
-    width: 200px;
-    display: block;
-    border: none;
-    padding: 10px 0;
-    border-bottom: solid 1px #1abc9c;
-    border-radius: 5px;
+input {
+  margin: 40px 25px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #1abc9c;
+  border-radius: 5px;
 }
 
-#submit{
-    border: none;
-    background: #1abc9c;
-    cursor: pointer;
-    border-radius: 3px;
-    padding: 6px;
-    width: 100px;
-    color: white;
-    margin-left: 0;
-
+#submit {
+  border: none;
+  background: #1abc9c;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 100px;
+  color: white;
+  margin-left: 0;
 }
-
 
 .logo {
-	position: relative;
-	top: 13px;
-	height: 30px;
-    width: 30px;
-    float: left;
-
+  position: relative;
+  top: 13px;
+  height: 30px;
+  width: 30px;
+  float: left;
 }
 
 .logo,
 h1.label {
-    display: flex;
-	padding-left: 10px;
+  display: flex;
+  padding-left: 10px;
 }
 
-header{
-    width: auto;
-    height: 50px;
-    background-color: #000000;
-    font-size:9px;
-    color: white;
+header {
+  width: auto;
+  height: 50px;
+  background-color: #000000;
+  font-size: 9px;
+  color: white;
 }
 
-h1.label{
-    padding-top: 15px;
-    margin-block-start: 0;
-    margin-block-end: 0;
+h1.label {
+  padding-top: 15px;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
-#error{
-    color: red;
-    font-family: 'Roboto', sans-serif;
+#error {
+  color: red;
+  font-family: "Roboto", sans-serif;
 }

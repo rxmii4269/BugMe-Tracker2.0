@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BugMe Issue Tracker</title>
 
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>BugMe Issue Tracker</title>
+    <link rel="stylesheet" type="text/css" href="styles/bugme.css" />
+  </head>
 
+  <body>
+    <header>
+      <img alt="Debugger icon" class="logo" src="/images/logo.png" />
+      <h1 class="label">BugMe Issue Tracker</h1>
+    </header>
+    <div class="rightsidemenu">
+      <a class="menuoptions" href="#" id="home"
+        ><img alt="home" class="icons" src="/images/home.png" /> Home</a
+      >
+      <a class="menuoptions" href="#" id="adduser"
+        ><img alt="add-user" class="icons" src="/images/adduser.png" /> Add
+        User</a
+      >
+      <a class="menuoptions" href="#" id="newissue"
+        ><img alt="plus sign" class="icons" src="/images/plus.png" /> New
+        Issue</a
+      >
+      <a class="menuoptions" href="#" id="logout"
+        ><img alt="logout sign" class="icons" src="/images/logout.png" />
+        Logout</a
+      >
+    </div>
 
-	<link rel="stylesheet" type="text/css" href="styles/bugme.css">
+    <div id="center" class="center"></div>
 
-</head>
-
-<body>
-	<header>
-		<img alt="Debugger icon" class="logo" src="/images/logo.png">
-		<h1 class="label">BugMe Issue Tracker </h1>
-	</header>
-	<div class="rightsidemenu">
-		<a class="menuoptions" href="#" id="home"><img alt="home" class="icons" src="/images/home.png"> Home</a>
-		<a class="menuoptions" href="#" id="adduser"><img alt="add-user" class="icons" src="/images/adduser.png"> Add
-			User</a>
-		<a class="menuoptions" href="#" id="newissue"><img alt="plus sign" class="icons" src="/images/plus.png"> New
-			Issue</a>
-		<a class="menuoptions" href="#" id="logout"><img alt="logout sign" class="icons" src="/images/logout.png">
-			Logout</a>
-
-
-	</div>
-
-
-	<div id="center" class="center">
-
-
-	</div>
-
-
-
-	<script type="text/javascript" src="scripts/js/bugme_home.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-</body>
-
+    <script type="text/javascript" src="scripts/js/bugme_home.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </body>
 </html>

@@ -1,31 +1,23 @@
-<!DOCTYPE html>
+<h1 class="newuser">New User</h1>
 
-<html>
+<form id="user" method="post">
+  <label class="input" for="firstname">First Name</label>
+  <input class="input" id="firstname" name="firstname" type="text" value="" />
+  <label class="input" for="lastname">Last Name</label>
+  <input class="input" id="lastname" name="lastname" type="text" value="" />
+  <label class="input" for="password">Password</label>
+  <input
+    autocomplete="current-password"
+    class="input"
+    id="password"
+    name="Password"
+    type="password"
+    value=""
+  />
+  <label class="input" for="email">Email</label>
+  <input class="input" id="email" name="Email" type="text" value="" />
 
-<body>
-
-
-
-
-	<h1 class="newuser">New User</h1>
-
-	<form id="user" method="post">
-        <label class="input" for="firstname">First Name</label>
-        <input class="input" id="firstname" name="firstname" type="text" value="">
-        <label class="input" for="lastname">Last Name</label>
-        <input class="input" id="lastname" name="lastname" type="text" value="">
-        <label class="input" for="password">Password</label>
-        <input autocomplete="current-password" class="input" id="password" name="Password" type="password" value="">
-        <label class="input" for="email">Email</label>
-        <input class="input" id="email" name="Email" type="text" value="">
-
-        <button id="newuserbtn" name='Submitbtn' type="button" value="">Submit</button>
-
-
-    </form>
-
-
-
-</body>
-
-</html>
+  <button id="newuserbtn" name="Submitbtn" type="button" value="">
+    Submit
+  </button>
+</form>
