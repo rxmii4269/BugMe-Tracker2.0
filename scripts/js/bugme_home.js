@@ -12,20 +12,20 @@ window.onload = () => {
 	let user = document.getElementById("user");
 	let errorType = document.getElementById("error_type");
 	let priority = document.getElementById("priority");
-	let titleExp = /[a-zA-z]+/;
-	let desExp = /[a-zA-z0-9]/;
-	let userExp = /[a-zA-z]+/;
+	let titleExp = /[a-zA-Z]+/;
+	let desExp = /[a-zA-Z0-9]/;
+	let userExp = /[a-zA-Z]+/;
 	let priorityExp = /(Minor|Major|Critical)/;
 	let errorTypeExp = /(Bug|Proposal|Task)/;
 	let nameExp = /[a-z]+/;
 	let pwExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-	let emailExp = /[a-zA-z0-9]+@[a-z]+\.[a-z]{3}/;
+	let emailExp = /[a-zA-Z0-9]+@[a-z]+\.[a-z]{3}/;
 
 	const createNewIssueButton = () => {
 		let createNewIssueBtn = document.getElementById("create_new_issue");
 
 		createNewIssueBtn.addEventListener("click", () => {
-			$("#center").load("new_issue.html ", function () {
+			$("#center").load("new_issue.html", function () {
 
 				//ajax request to get assigned users and populate it into the assigned to field
 				let userLst = document.getElementById("userlist");

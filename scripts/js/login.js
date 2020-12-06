@@ -7,10 +7,10 @@ window.onload = () => {
     let normalcolor = '#FFFFFF';
 
 
-    let forms = document.querySelectorAll('form');
-    for (let i = 0; i < forms.length; i++) {
-        forms[i].setAttribute('novalidate', true);
-    }
+    // let forms = document.querySelectorAll('form');
+    // for (let i = 0; i < forms.length; i++) {
+    //     forms[i].setAttribute('novalidate', true);
+    // }
 
 
 

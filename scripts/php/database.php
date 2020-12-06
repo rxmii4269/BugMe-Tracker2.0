@@ -1,6 +1,6 @@
 <?php
 
-$host = 'localhost';
+$host = '172.17.0.4';
 $username = 'bugMe';
 $password = 'iNFO@2180';
 $dbname = 'bugMe_Tracker';

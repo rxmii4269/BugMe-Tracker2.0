@@ -1,4 +1,4 @@
-USE qct0nyo6v3qvg60y;
+USE bugMe_Tracker;
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users`
 (
